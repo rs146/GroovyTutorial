@@ -13,7 +13,8 @@ class SmartPhoneTest {
     SmartPhone sp = new SmartPhone()
 
     /**
-     * 
+     * We should be able to call the dial method defined
+     * in the Phone class.
      */
     @Test
     void shouldCallDialFromSmartPhone() {
