@@ -26,10 +26,13 @@ class GeoLocatorService {
             }.join(',')
         ].collect { k,v -> "$k=$v"}.join('&')
         
+        println url
         def response = new XmlSlurper().parse(url)
-        double latitude = Double.parseDouble(response.result[0].geometry.location.lat.toString())
-        double longitude = Double.parseDouble(response.result[0].geometry.location.lng.toString())
+        String latitude = response.result[0].geometry.location.lat ?: "0.0"
+        String longitude = response.result[0].geometry.location.lng ?: "0.0"
         
-        new ImmutablePoint(x: latitude, y: longitude)
+        double lat = latitude.toDouble()
+        double lng = longitude.toDouble()
+        new ImmutablePoint(x: lat, y: lng)
     }
 }

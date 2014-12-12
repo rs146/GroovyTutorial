@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Unit test for the {@code GeoLocatorServiceTest}.
+ * Integration test for the {@code GeoLocatorServiceTest}.
  *
  * @author rahulsingh
  *

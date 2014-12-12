@@ -10,5 +10,8 @@ class Main {
         List<Person> people = initialiser.retrievePeople();
         
         people.each() { println "$it, " }
+        
+        GeoLocatorService geoLocSvc = new GeoLocatorService()
+        geoLocSvc.getLongLatForAddress("15 The Alders", "Hounslow", "TW5 0HP")
     }
 }
