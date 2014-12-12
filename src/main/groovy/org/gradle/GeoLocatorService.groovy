@@ -5,7 +5,7 @@ import java.lang.Double.*
  * Service class to obtain the longitude and latitude
  * of a particular address.
  *
- * @author rsingh
+ * @author rahulsingh
  */
 class GeoLocatorService {
 
