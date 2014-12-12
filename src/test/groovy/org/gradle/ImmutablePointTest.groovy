@@ -4,11 +4,19 @@ import spock.lang.Specification
 
 /**
  * Spock test which tests the immutability of {@code ImmutablePoint}.
- * @author rsingh
+ * @author rahulsingh
  *
  */
 class ImmutablePointTest extends Specification {
-    ImmutablePoint p = new ImmutablePoint(x:3, y:4)
+    ImmutablePoint p;
+
+    /**
+     * Setup.
+     * @return ImmutablePoint p
+     */
+    def setup() {
+       p = new ImmutablePoint(x:3, y:4)
+    }
 
     /**
      * We should be able to create a map using the two property
