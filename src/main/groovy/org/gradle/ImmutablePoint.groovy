@@ -21,4 +21,12 @@ class ImmutablePoint {
     String toString() {
         "($x, $y)"
     }
+    
+    String getX() {
+        "$x"
+    }
+    
+    String getY() {
+        "$y"
+    }
 }
