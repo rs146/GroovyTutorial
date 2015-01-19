@@ -14,11 +14,11 @@ import org.springframework.context.annotation.PropertySource
 @ComponentScan("org.gradle.dataaccess")
 class Application {
 
-    static void main(String[] args) throws Throwable {
-        ConfigurableApplicationContext context = SpringApplication.run(Application.class)
+	static void main(String[] args) throws Throwable {
+		ConfigurableApplicationContext context = SpringApplication.run(Application.class)
 		ContactRepository contactRepo = context.getBean(ContactRepository.class)
 		List<Contact> contacts = contactRepo.findAllContacts()
-		
+
 		contacts.each{ contact -> println "$contact.name"}
-    }
+	}
 }

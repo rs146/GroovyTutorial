@@ -10,26 +10,26 @@ import org.springframework.stereotype.Repository
 
 @Repository
 class ContactRepository {
-	
+
 	private DataSource dataSource
 
-    @Autowired
-    JdbcTemplate jdbcTemplate
- 
+	@Autowired
+	JdbcTemplate jdbcTemplate
+
 	@Autowired
 	public void setDataSource(DataSource ds) {
 		this.dataSource = ds
 		this.jdbcTemplate = new JdbcTemplate(dataSource)
 	}
 
-    List<Contact> findAllContacts() {
-        jdbcTemplate.query("SELECT * FROM Contact", contactMapper)
-    }
-    
-    static final RowMapper<Contact> contactMapper = new RowMapper<Contact>() {
-        public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
-            Contact contact = new Contact(rs.getInt("id"), rs.getString("name"))
-            return contact
-        }
-    };
+	List<Contact> findAllContacts() {
+		jdbcTemplate.query("SELECT * FROM Contact", contactMapper)
+	}
+
+	static final RowMapper<Contact> contactMapper = new RowMapper<Contact>() {
+		public Contact mapRow(ResultSet rs, int rowNum) throws SQLException {
+			Contact contact = new Contact(rs.getInt("id"), rs.getString("name"))
+			return contact
+		}
+	};
 }

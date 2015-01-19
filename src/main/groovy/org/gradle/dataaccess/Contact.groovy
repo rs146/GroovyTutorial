@@ -7,9 +7,9 @@ package org.gradle.dataaccess
  */
 class Contact {
 
-    Integer id;
-    String name;
-	
+	Integer id;
+	String name;
+
 	public Contact(Integer id, String name) {
 		this.id = id
 		this.name = name
